@@ -22,6 +22,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
       src: "/rose-hero.png",
       alt: "A wedding couple framed in light",
       fit: "object-contain object-center md:object-right",
+      scale: "scale-100",
       blur: ROSE_BLUR,
       priority: true,
     },
@@ -30,6 +31,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
       src: "/dj-hero.png",
       alt: "A DJ booth with turntables and speakers",
       fit: "object-contain object-center",
+      scale: "scale-[0.82]",
       blur: undefined as string | undefined,
       priority: false,
     },
@@ -49,7 +51,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
       <span className="vf-br" />
 
       {/* Two columns: copy + image. They never overlap, so text can't be clipped. */}
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 px-6 pt-24 pb-16 md:grid-cols-2 md:gap-10 md:px-10 md:pt-0 md:pb-0">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 px-6 pt-24 pb-16 md:grid-cols-[1.15fr_0.85fr] md:gap-10 md:px-10 md:pt-0 md:pb-0">
         {/* Copy */}
         <div className="order-2 max-w-2xl md:order-1">
           <AnimatePresence mode="wait">
@@ -69,12 +71,12 @@ export function Hero({ go }: { go: (i: number) => void }) {
                 {s.content.kicker}
               </motion.p>
 
-              <h1 className="font-display font-light leading-[0.98] text-[clamp(3rem,8.8vw,6.5rem)]">
+              <h1 className="font-display font-light leading-[1.02] text-[clamp(2.25rem,5vw,4rem)]">
                 <motion.span
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                  className="block text-cream"
+                  className="block text-cream md:whitespace-nowrap"
                 >
                   {s.content.titleA}
                 </motion.span>
@@ -82,7 +84,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                  className="block italic text-gradient-rose pb-2"
+                  className="block italic text-gradient-rose pb-2 md:whitespace-nowrap"
                 >
                   {s.content.titleB}
                 </motion.span>
@@ -140,7 +142,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
         </div>
 
         {/* Image */}
-        <div className="relative order-1 h-[34vh] w-full sm:h-[42vh] md:order-2 md:h-[78vh] md:w-[48vw] md:-me-4 lg:-me-8">
+        <div className="relative order-1 h-[32vh] w-full sm:h-[40vh] md:order-2 md:h-[74vh]">
           {/* soft glow behind the subject */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(225,29,54,0.25),transparent_62%)]" />
           <div className="float-soft relative h-full w-full">
@@ -159,8 +161,8 @@ export function Hero({ go }: { go: (i: number) => void }) {
                   fill
                   priority={s.priority}
                   quality={70}
-                  sizes="(max-width: 768px) 90vw, 50vw"
-                  className={s.fit}
+                  sizes="(max-width: 768px) 90vw, 45vw"
+                  className={`${s.fit} ${s.scale}`}
                   {...(s.blur ? { placeholder: "blur" as const, blurDataURL: s.blur } : {})}
                 />
               </motion.div>

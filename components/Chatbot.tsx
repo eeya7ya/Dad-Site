@@ -75,7 +75,7 @@ export function Chatbot() {
           alt=""
           fill
           sizes="80px"
-          className="scale-[1.35] object-cover object-center drop-shadow-[0_2px_8px_rgba(216,178,90,0.6)]"
+          className="scale-110 object-contain object-center drop-shadow-[0_2px_8px_rgba(216,178,90,0.6)]"
         />
         <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(216,178,90,0.18),transparent_70%)]" />
         {!open && (
