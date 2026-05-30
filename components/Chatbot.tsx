@@ -64,7 +64,7 @@ export function Chatbot() {
         transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 18 }}
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 z-50 grid h-16 w-16 place-items-center rounded-full border border-gold/40 bg-ink-soft/90 shadow-[0_10px_40px_-8px_rgba(216,178,90,0.5)] backdrop-blur"
+        className="fixed bottom-6 z-50 grid h-20 w-20 place-items-center rounded-full border border-gold/40 bg-ink-soft/90 shadow-[0_10px_40px_-8px_rgba(216,178,90,0.5)] backdrop-blur"
         style={side}
         aria-label={t.chat.open}
       >
@@ -72,8 +72,8 @@ export function Chatbot() {
         <Image
           src="/chat-rings.png"
           alt=""
-          width={44}
-          height={44}
+          width={56}
+          height={56}
           className="relative drop-shadow-[0_2px_8px_rgba(216,178,90,0.6)]"
         />
         {!open && (
@@ -89,7 +89,7 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 z-50 flex h-[30rem] w-[min(22rem,calc(100vw-3rem))] flex-col overflow-hidden rounded-3xl border border-gold/25 bg-ink-soft/95 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl"
+            className="fixed bottom-28 z-50 flex h-[min(38rem,calc(100vh-9rem))] w-[min(27rem,calc(100vw-3rem))] flex-col overflow-hidden rounded-3xl border border-gold/25 bg-ink-soft/95 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9)] backdrop-blur-xl"
             style={side}
           >
             {/* Header */}

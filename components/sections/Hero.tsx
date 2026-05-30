@@ -88,7 +88,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
           initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative order-1 h-[30vh] w-full sm:h-[36vh] md:order-2 md:h-[68vh]"
+          className="relative order-1 h-[38vh] w-full sm:h-[46vh] md:order-2 md:h-[88vh] md:w-[55vw] md:-me-10 lg:-me-16"
         >
           {/* soft glow behind the bloom */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(225,29,54,0.25),transparent_62%)]" />
@@ -98,8 +98,8 @@ export function Hero({ go }: { go: (i: number) => void }) {
               alt="A single crimson rose framed in a camera viewfinder"
               fill
               priority
-              sizes="(max-width: 768px) 90vw, 50vw"
-              className="object-contain object-center"
+              sizes="(max-width: 768px) 90vw, 55vw"
+              className="object-contain object-center md:object-right"
             />
           </div>
         </motion.div>
