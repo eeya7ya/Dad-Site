@@ -52,7 +52,9 @@ export function Chatbot() {
     }
   }
 
-  const side = lang === "ar" ? { left: "1.5rem" } : { right: "1.5rem" };
+  // Keep the launcher opposite the section dots: dots sit on the right in
+  // English (left in Arabic), so the chat lives on the left (right in Arabic).
+  const side = lang === "ar" ? { right: "1.5rem" } : { left: "1.5rem" };
 
   return (
     <>
@@ -64,18 +66,18 @@ export function Chatbot() {
         transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 18 }}
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 z-50 grid h-20 w-20 place-items-center rounded-full border border-gold/40 bg-ink-soft/90 shadow-[0_10px_40px_-8px_rgba(216,178,90,0.5)] backdrop-blur"
+        className="fixed bottom-6 z-50 grid h-20 w-20 place-items-center overflow-hidden rounded-full border border-gold/40 bg-ink-soft/90 shadow-[0_10px_40px_-8px_rgba(216,178,90,0.5)] backdrop-blur"
         style={side}
         aria-label={t.chat.open}
       >
-        <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(216,178,90,0.35),transparent_65%)]" />
         <Image
           src="/chat-rings.png"
           alt=""
-          width={56}
-          height={56}
-          className="relative drop-shadow-[0_2px_8px_rgba(216,178,90,0.6)]"
+          fill
+          sizes="80px"
+          className="scale-110 object-contain object-center drop-shadow-[0_2px_8px_rgba(216,178,90,0.6)]"
         />
+        <span className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(216,178,90,0.18),transparent_70%)]" />
         {!open && (
           <span className="rec-dot absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-ink bg-rose" />
         )}

@@ -38,6 +38,16 @@ export const dict = {
       ctaSecondary: "View the work",
       scroll: "Scroll",
     },
+    heroDj: {
+      rec: "LIVE",
+      kicker: "DJ · Parties · Live Events",
+      titleA: "Sound,",
+      titleB: "that moves the night.",
+      sub: "Open-format DJ sets that read the room and keep the floor full — from the first dance to the last call.",
+      ctaPrimary: "Book the booth",
+      ctaSecondary: "Hear the sets",
+      scroll: "Scroll",
+    },
     about: {
       eyebrow: "The Studio",
       heading: "We don't just take photos.\nWe keep time.",
@@ -137,6 +147,16 @@ export const dict = {
       sub: "استوديو تصوير فني يلتقط اللحظات التي لا تتكرر — بأسلوب سينمائي دافئ، صُنع ليبقى خالداً.",
       ctaPrimary: "ابدأ حكايتك",
       ctaSecondary: "شاهد الأعمال",
+      scroll: "مرّر",
+    },
+    heroDj: {
+      rec: "مباشر",
+      kicker: "دي جي · حفلات · مناسبات",
+      titleA: "إيقاعٌ",
+      titleB: "يُشعِلُ الليل.",
+      sub: "أمسيات دي جي تقرأ أجواء الحفل وتُبقي الجميع على حلبة الرقص حتى آخر لحظة.",
+      ctaPrimary: "احجز أمسيتك",
+      ctaSecondary: "استمع للأعمال",
       scroll: "مرّر",
     },
     about: {
