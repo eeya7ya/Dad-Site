@@ -9,8 +9,8 @@ export const studio = {
   founded: 2014,
   city: "Based in the city, available worldwide",
   email: "hello@roselens.studio",
-  phone: "+1 (212) 555-0147",
-  instagram: "@roselens.studio",
+  phones: ["+962 79 787 0685", "+962 79 534 8406"],
+  facebook: "https://www.facebook.com/share/1LR6cmU1sg/",
   hours: "Studio consultations Tue–Sat, 10am–6pm",
   services: [
     {

@@ -32,7 +32,7 @@ ${studio.process.map((p) => `- ${p.step} ${p.title}: ${p.text}`).join("\n")}
 PRACTICAL DETAILS
 - Studio: ${studio.name}, founded ${studio.founded}. ${studio.city}.
 - Hours: ${studio.hours}.
-- Email: ${studio.email} · Phone: ${studio.phone} · Instagram: ${studio.instagram}.
+- Email: ${studio.email} · Phone: ${studio.phones.join(" or ")} · Facebook: ${studio.facebook}.
 - Tagline: "${studio.tagline}"
 
 GUARDRAILS
