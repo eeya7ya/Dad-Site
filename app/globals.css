@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Rose Lens — design tokens
+   Pulled from the dashboard: a crimson rose on near-black,
+   framed in a camera viewfinder, with gold from the ring icon.
+   ============================================================ */
+@theme {
+  --color-ink: #08050a;
+  --color-ink-soft: #0f0a10;
+  --color-rose: #e11d36;
+  --color-rose-deep: #8c0f23;
+  --color-rose-bright: #ff3b54;
+  --color-blush: #f7d9df;
+  --color-gold: #d8b25a;
+  --color-gold-bright: #f0d488;
+  --color-cream: #f4ede9;
+  --color-mute: #a89aa0;
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+}
+
+:root {
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden; /* the snap container owns the scroll */
+}
+
+/* ---- One page per scroll -------------------------------------------------
+   The scroll container uses mandatory y-snapping so every wheel / swipe
+   lands on exactly one full-height panel. No free scrolling. */
+.snap-deck {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.snap-deck::-webkit-scrollbar {
+  display: none;
+}
+.snap-panel {
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+}
+
+/* Reusable gradient washes ------------------------------------------------ */
+.wash-rose {
+  background:
+    radial-gradient(120% 90% at 20% 10%, rgba(225, 29, 54, 0.18) 0%, transparent 55%),
+    radial-gradient(100% 80% at 90% 90%, rgba(140, 15, 35, 0.22) 0%, transparent 60%),
+    linear-gradient(160deg, #0c0709 0%, #08050a 60%, #0a0509 100%);
+}
+.wash-gold {
+  background:
+    radial-gradient(90% 70% at 80% 15%, rgba(216, 178, 90, 0.12) 0%, transparent 55%),
+    linear-gradient(200deg, #0a0608 0%, #0f0a0c 100%);
+}
+
+.text-gradient-rose {
+  background: linear-gradient(110deg, var(--color-cream) 0%, var(--color-blush) 35%, var(--color-rose-bright) 75%, var(--color-gold-bright) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-gold {
+  background: linear-gradient(100deg, var(--color-gold-bright) 0%, var(--color-gold) 50%, var(--color-rose) 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hairline {
+  background: linear-gradient(90deg, transparent, rgba(216, 178, 90, 0.5), transparent);
+}
+
+/* Glass card -------------------------------------------------------------- */
+.glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(216, 178, 90, 0.16);
+  backdrop-filter: blur(14px);
+}
+.glass:hover {
+  border-color: rgba(225, 29, 54, 0.4);
+}
+
+/* Letter-spaced label ----------------------------------------------------- */
+.eyebrow {
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--color-gold);
+}
+
+/* Viewfinder corner brackets (echoes the dashboard REC framing) ----------- */
+.viewfinder::before,
+.viewfinder::after,
+.viewfinder > .vf-tl,
+.viewfinder > .vf-br {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border: 2px solid rgba(244, 237, 233, 0.55);
+  pointer-events: none;
+}
+.viewfinder::before { top: 24px; left: 24px; border-right: 0; border-bottom: 0; }
+.viewfinder::after { top: 24px; right: 24px; border-left: 0; border-bottom: 0; }
+.viewfinder > .vf-tl { bottom: 24px; left: 24px; border-right: 0; border-top: 0; }
+.viewfinder > .vf-br { bottom: 24px; right: 24px; border-left: 0; border-top: 0; }
+
+@keyframes rec-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+.rec-dot {
+  animation: rec-blink 1.4s steps(1) infinite;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-soft {
+  animation: float-soft 6s var(--ease-silk) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-deck { scroll-behavior: auto; }
+  .float-soft, .rec-dot { animation: none; }
+}

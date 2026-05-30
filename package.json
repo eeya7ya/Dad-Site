@@ -1,0 +1,29 @@
+{
+  "name": "rose-lens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rose Lens — photography studio website with Neon database and Claude AI concierge.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:init": "node --env-file=.env.local scripts/init-db.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
+    "@neondatabase/serverless": "^0.10.4",
+    "framer-motion": "^11.18.0",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
