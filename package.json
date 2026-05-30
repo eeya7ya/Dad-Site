@@ -2,7 +2,7 @@
   "name": "rose-lens",
   "version": "1.0.0",
   "private": true,
-  "description": "Rose Lens — photography studio website with Neon database and Claude AI concierge.",
+  "description": "Melody Strings — photography studio website with Neon database and Claude AI concierge.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

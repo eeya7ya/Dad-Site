@@ -17,18 +17,18 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Rose Lens — Wedding & Portrait Photography",
+  title: "Melody Strings — Wedding & Portrait Photography",
   description:
-    "Rose Lens is a fine-art photography studio capturing weddings, engagements and portraits with cinematic, timeless imagery.",
+    "Melody Strings is a fine-art photography studio capturing weddings, engagements and portraits with cinematic, timeless imagery.",
   keywords: [
-    "Rose Lens",
+    "Melody Strings",
     "wedding photography",
     "engagement photography",
     "portrait studio",
     "fine art photographer",
   ],
   openGraph: {
-    title: "Rose Lens — Wedding & Portrait Photography",
+    title: "Melody Strings — Wedding & Portrait Photography",
     description:
       "Cinematic, timeless imagery for weddings, engagements and portraits.",
     type: "website",

@@ -97,7 +97,7 @@ export async function POST(req: Request) {
   const lang = body.lang === "ar" ? "ar" : "en";
   const langDirective =
     lang === "ar"
-      ? "Reply only in Modern Standard Arabic. Keep the brand name as \"Rose Lens\" in Latin letters."
+      ? "Reply only in Modern Standard Arabic. Keep the brand name as \"Melody Strings\" in Latin letters."
       : "Reply only in English.";
 
   if (messages.length === 0 || messages[messages.length - 1].role !== "user") {

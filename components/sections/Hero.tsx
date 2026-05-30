@@ -21,7 +21,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
       {/* Two columns: copy + rose. They never overlap, so text can't be clipped. */}
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 px-6 pt-24 pb-16 md:grid-cols-2 md:gap-10 md:px-10 md:pt-0 md:pb-0">
         {/* Copy */}
-        <div className="order-2 max-w-xl md:order-1">
+        <div className="order-2 max-w-2xl md:order-1">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
             {t.hero.kicker}
           </motion.p>
 
-          <h1 className="font-display font-light leading-[0.98] text-[clamp(2.75rem,8vw,5.5rem)]">
+          <h1 className="font-display font-light leading-[0.98] text-[clamp(3rem,8.8vw,6.5rem)]">
             <motion.span
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-mute md:text-lg"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-mute md:text-xl"
           >
             {t.hero.sub}
           </motion.p>
@@ -85,10 +85,10 @@ export function Hero({ go }: { go: (i: number) => void }) {
 
         {/* Rose */}
         <motion.div
-          initial={{ opacity: 0, scale: 1.06 }}
+          initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative order-1 h-[30vh] w-full sm:h-[36vh] md:order-2 md:h-[68vh]"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative order-1 h-[34vh] w-full sm:h-[42vh] md:order-2 md:h-[78vh] md:w-[48vw] md:-me-4 lg:-me-8"
         >
           {/* soft glow behind the bloom */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(225,29,54,0.25),transparent_62%)]" />
@@ -98,8 +98,12 @@ export function Hero({ go }: { go: (i: number) => void }) {
               alt="A single crimson rose framed in a camera viewfinder"
               fill
               priority
-              sizes="(max-width: 768px) 90vw, 50vw"
-              className="object-contain object-center"
+              fetchPriority="high"
+              quality={70}
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjMyIiBmaWxsPSIjMGMwNzA5Ii8+PGNpcmNsZSBjeD0iMTMiIGN5PSIxNCIgcj0iOSIgZmlsbD0iIzhjMGYyMyIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjQiIGZpbGw9IiNlMTFkMzYiIG9wYWNpdHk9IjAuNSIvPjwvc3ZnPg=="
+              sizes="(max-width: 768px) 90vw, 55vw"
+              className="object-contain object-center md:object-right"
             />
           </div>
         </motion.div>

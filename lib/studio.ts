@@ -4,11 +4,11 @@
  * never contradicts what's on the page.
  */
 export const studio = {
-  name: "Rose Lens",
+  name: "Melody Strings",
   tagline: "Love, framed in light.",
   founded: 2014,
   city: "Based in the city, available worldwide",
-  email: "hello@roselens.studio",
+  email: "hello@melodystrings.studio",
   phones: ["+962 79 787 0685", "+962 79 534 8406"],
   facebook: "https://www.facebook.com/share/1LR6cmU1sg/",
   hours: "Studio consultations Tue–Sat, 10am–6pm",

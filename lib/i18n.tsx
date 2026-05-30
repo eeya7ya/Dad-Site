@@ -12,13 +12,13 @@ import {
 export type Lang = "en" | "ar";
 
 /* ------------------------------------------------------------------ *
- *  Bilingual content. The brand name stays "Rose Lens" in Latin form
+ *  Bilingual content. The brand name stays "Melody Strings" in Latin form
  *  even in Arabic (it's a trademark), but everything else is localised.
  * ------------------------------------------------------------------ */
 export const dict = {
   en: {
     dir: "ltr",
-    brand: "Rose Lens",
+    brand: "Melody Strings",
     langToggle: "العربية",
     nav: {
       home: "Home",
@@ -41,7 +41,7 @@ export const dict = {
     about: {
       eyebrow: "The Studio",
       heading: "We don't just take photos.\nWe keep time.",
-      body: "Since 2014, Rose Lens has photographed couples and families who want more than a gallery — they want the feeling of the day, preserved. We shoot quietly, direct gently, and grade every frame by hand so it looks like you remember it, not like a filter.",
+      body: "Since 2014, Melody Strings has photographed couples and families who want more than a gallery — they want the feeling of the day, preserved. We shoot quietly, direct gently, and grade every frame by hand so it looks like you remember it, not like a filter.",
       stats: [
         { value: "10+", label: "Years behind the lens" },
         { value: "420", label: "Weddings documented" },
@@ -106,7 +106,7 @@ export const dict = {
       open: "Chat with us",
       title: "Iris · Studio Concierge",
       subtitle: "Ask about dates, packages & pricing",
-      greeting: "Hi, I'm Iris — the Rose Lens concierge. How can I help with your photography plans?",
+      greeting: "Hi, I'm Iris — the Melody Strings concierge. How can I help with your photography plans?",
       placeholder: "Type your message…",
       send: "Send",
       error: "Something went wrong. Please try again.",
@@ -119,7 +119,7 @@ export const dict = {
 
   ar: {
     dir: "rtl",
-    brand: "Rose Lens",
+    brand: "Melody Strings",
     langToggle: "English",
     nav: {
       home: "الرئيسية",
@@ -142,7 +142,7 @@ export const dict = {
     about: {
       eyebrow: "الاستوديو",
       heading: "نحن لا نلتقط الصور فحسب،\nبل نحفظ الزمن.",
-      body: "منذ عام 2014، يوثّق Rose Lens قصص الأزواج والعائلات الذين يريدون أكثر من مجرد ألبوم — يريدون شعور اليوم محفوظاً. نصوّر بهدوء، ونوجّه بلطف، ونعالج كل لقطة يدوياً لتبدو كما تتذكرونها تماماً.",
+      body: "منذ عام 2014، يوثّق Melody Strings قصص الأزواج والعائلات الذين يريدون أكثر من مجرد ألبوم — يريدون شعور اليوم محفوظاً. نصوّر بهدوء، ونوجّه بلطف، ونعالج كل لقطة يدوياً لتبدو كما تتذكرونها تماماً.",
       stats: [
         { value: "+10", label: "أعوام خلف العدسة" },
         { value: "420", label: "حفل زفاف موثّق" },
@@ -200,7 +200,7 @@ export const dict = {
       open: "تحدّث معنا",
       title: "إيريس · مساعدة الاستوديو",
       subtitle: "اسأل عن المواعيد والباقات والأسعار",
-      greeting: "مرحباً، أنا إيريس مساعِدة Rose Lens. كيف يمكنني مساعدتك في خطط تصويرك؟",
+      greeting: "مرحباً، أنا إيريس مساعِدة Melody Strings. كيف يمكنني مساعدتك في خطط تصويرك؟",
       placeholder: "اكتب رسالتك…",
       send: "إرسال",
       error: "حدث خطأ ما. حاول مرة أخرى.",
