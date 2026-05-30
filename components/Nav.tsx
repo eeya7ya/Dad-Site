@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 
 interface NavProps {
@@ -9,6 +11,7 @@ interface NavProps {
 
 export function Nav({ active, onNavigate }: NavProps) {
   const { t, toggle, lang } = useLang();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // index map matches the panel order in Site.tsx
   const links = [
@@ -17,6 +20,12 @@ export function Nav({ active, onNavigate }: NavProps) {
     { i: 3, label: t.nav.services },
     { i: 5, label: t.nav.contact },
   ];
+
+  // Navigate then close the mobile sheet.
+  const handleNavigate = (i: number) => {
+    setMenuOpen(false);
+    onNavigate(i);
+  };
 
   const scrolled = active > 0;
 
@@ -79,8 +88,70 @@ export function Nav({ active, onNavigate }: NavProps) {
           >
             {t.nav.book}
           </button>
+
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="grid h-9 w-9 place-items-center rounded-full border border-gold/30 text-cream transition-colors hover:border-gold/70 md:hidden"
+            aria-label="Menu"
+            aria-expanded={menuOpen}
+          >
+            <span className="relative flex h-3.5 w-4 flex-col justify-between">
+              <span
+                className="h-0.5 w-full rounded-full bg-current transition-transform duration-300"
+                style={{ transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }}
+              />
+              <span
+                className="h-0.5 w-full rounded-full bg-current transition-opacity duration-300"
+                style={{ opacity: menuOpen ? 0 : 1 }}
+              />
+              <span
+                className="h-0.5 w-full rounded-full bg-current transition-transform duration-300"
+                style={{ transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }}
+              />
+            </span>
+          </button>
         </div>
       </div>
+
+      {/* Mobile sheet */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-gold/10 bg-ink/95 backdrop-blur-md md:hidden"
+          >
+            <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
+              <button
+                onClick={() => handleNavigate(0)}
+                className="rounded-lg px-3 py-3 text-start text-sm tracking-wide text-mute transition-colors hover:bg-white/5 hover:text-cream data-[on=true]:text-cream"
+                data-on={active === 0}
+              >
+                {t.nav.home}
+              </button>
+              {links.map((l) => (
+                <button
+                  key={l.i}
+                  onClick={() => handleNavigate(l.i)}
+                  className="rounded-lg px-3 py-3 text-start text-sm tracking-wide text-mute transition-colors hover:bg-white/5 hover:text-cream data-[on=true]:text-cream"
+                  data-on={active === l.i}
+                >
+                  {l.label}
+                </button>
+              ))}
+              <button
+                onClick={() => handleNavigate(5)}
+                className="mt-2 rounded-full bg-gradient-to-r from-rose to-rose-deep px-5 py-3 text-sm font-medium text-cream shadow-[0_8px_30px_-10px_rgba(225,29,54,0.8)]"
+              >
+                {t.nav.book}
+              </button>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

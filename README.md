@@ -1,4 +1,4 @@
-# Rose Lens
+# Melody Strings
 
 A fine-art photography studio website — bilingual (English / العربية), one-page-per-scroll, with a Neon serverless database and a Claude-powered AI concierge.
 

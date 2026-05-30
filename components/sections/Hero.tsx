@@ -85,9 +85,9 @@ export function Hero({ go }: { go: (i: number) => void }) {
 
         {/* Rose */}
         <motion.div
-          initial={{ opacity: 0, scale: 1.06 }}
+          initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative order-1 h-[38vh] w-full sm:h-[46vh] md:order-2 md:h-[88vh] md:w-[55vw] md:-me-10 lg:-me-16"
         >
           {/* soft glow behind the bloom */}
@@ -98,6 +98,10 @@ export function Hero({ go }: { go: (i: number) => void }) {
               alt="A single crimson rose framed in a camera viewfinder"
               fill
               priority
+              fetchPriority="high"
+              quality={70}
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIzMiI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjMyIiBmaWxsPSIjMGMwNzA5Ii8+PGNpcmNsZSBjeD0iMTMiIGN5PSIxNCIgcj0iOSIgZmlsbD0iIzhjMGYyMyIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjQiIGZpbGw9IiNlMTFkMzYiIG9wYWNpdHk9IjAuNSIvPjwvc3ZnPg=="
               sizes="(max-width: 768px) 90vw, 55vw"
               className="object-contain object-center md:object-right"
             />
