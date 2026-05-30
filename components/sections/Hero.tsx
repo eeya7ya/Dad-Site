@@ -21,7 +21,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
       {/* Two columns: copy + rose. They never overlap, so text can't be clipped. */}
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 px-6 pt-24 pb-16 md:grid-cols-2 md:gap-10 md:px-10 md:pt-0 md:pb-0">
         {/* Copy */}
-        <div className="order-2 max-w-xl md:order-1">
+        <div className="order-2 max-w-2xl md:order-1">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
             {t.hero.kicker}
           </motion.p>
 
-          <h1 className="font-display font-light leading-[0.98] text-[clamp(2.75rem,8vw,5.5rem)]">
+          <h1 className="font-display font-light leading-[0.98] text-[clamp(3rem,8.8vw,6.5rem)]">
             <motion.span
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-mute md:text-lg"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-mute md:text-xl"
           >
             {t.hero.sub}
           </motion.p>
@@ -88,7 +88,7 @@ export function Hero({ go }: { go: (i: number) => void }) {
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative order-1 h-[38vh] w-full sm:h-[46vh] md:order-2 md:h-[88vh] md:w-[55vw] md:-me-10 lg:-me-16"
+          className="relative order-1 h-[34vh] w-full sm:h-[42vh] md:order-2 md:h-[78vh] md:w-[48vw] md:-me-4 lg:-me-8"
         >
           {/* soft glow behind the bloom */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(225,29,54,0.25),transparent_62%)]" />
